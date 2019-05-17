@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<br><br>
+	<label>Nombre: </label>
+	<input type="text" id="nombre">
+	<br><br>
+	<label>Edad: </label>
+	<input type="number" min="1" max="120" id="edad">
+	<br><br>
+	<label>Apellido: </label>
+	<input type="text" id="apellido">
+	<br><br>
+	<button onclick="obtenerNombre()">Enviar</button>
+	
+	<script>
+		function obtenerNombre(){
+			var nombre 	= document.getElementById('nombre').value;
+			var edad 	= document.getElementById('edad').value;
+			var apellido = document.getElementById('apellido').value;
+			console.log(nombre + edad + apellido);
+			alert(nombre + " " + edad + " " + apellido);
+
+
+			//Recorrer arreglos en JS
+			pais = ['Mexico', 'España', 'Argentina', 'Chile', 'Colombia', 'Venezuela', 'Perú', 'Costa Rica'];
+
+			pais.forEach(function(elemento){
+				console.log(elemento);
+			});
+			
+			
+			
+		}
+	</script>
+	
+</body>
+</html>
