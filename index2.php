@@ -39,7 +39,7 @@ return $link;
 } 
 
 $link = Conectarse(); 
-$sql ="insert into usuario values (3,'$nombre')";
+$sql ="insert into usuario values (null,'$nombre')";
 mysqli_query($link,$sql);
 //mysql_close($link);
 
