@@ -41,7 +41,7 @@ return $link;
 $link = Conectarse(); 
 $sql ="insert into usuario values (null,'$nombre')";
 mysqli_query($link,$sql);
-//mysql_close($link);
+mysqli_close($link);
 
 ?>
 
