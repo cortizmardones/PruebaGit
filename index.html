@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Formulario de Inscripción</title>
 
 	<link rel=icon href=img\favicon.jpg sizes="16x16" type="image/jpg">
 	
@@ -27,13 +27,13 @@
 						<br>
 						<div class="container">
 							<div class="card-header">
-								<h4 class="my-0 font-weight-normal"><i class="fas fa-address-card"></i> Formulario de inscripción:</h4>
+								<h4 class="my-0 font-weight-normal"><i class="fas fa-address-book"></i>  Formulario de inscripción:</h4>
 							</div>
 							<br>
-							<label><i class="fas fa-male"></i> Nombre: </label>
+							<label><i class="fas fa-address-card"></i> Nombre: </label>
 							<input type="text" class="form-control" id="nombre" autocomplete="off">
 							<br>
-							<label><i class="fas fa-male"></i> Apellido: </label>
+							<label><i class="far fa-address-card"></i> Apellido: </label>
 							<input type="text" class="form-control" id="apellido" autocomplete="off">
 							<br>
 							<label><i class="fas fa-baby-carriage"></i> Edad: </label>
@@ -42,15 +42,27 @@
 							<label><i class="fas fa-envelope-open"></i> Correo electrónico: </label>
 			
 							<div class="input-group-prepend">
-								<input type="text" class="form-control" id="email">
+								<input type="text" class="form-control" id="email" autocomplete="off">
 								<div class="input-group-text form"><i class="fas fa-at"></i><!--Acá estoy trayendo el @ de Font Awesome--></div>
-								<input type="text" class="form-control" id="email2">
+								<input type="text" class="form-control" id="email2" autocomplete="off">
 							</div>
 			
 							<br>
 							<label><i class="fas fa-user-tie"></i> Carrera: </label>
-							<input type="text" class="form-control" id="carrera" autocomplete="off">
 							<br>
+						
+							<select name="carrera" id="carrera" class="form-control">
+								<option value="Analista Programador Computacional">Analista Programador Computacional</option>
+								<option value="Ingeniero en Informática">Ingeniero en Informática</option>
+								<option value="Arquitecto de Software">Arquitecto de Software</option>
+								<option value="Administrador de la BDD">Administrador de la BDD</option>
+								<option value="Community Manager">Community Manager</option>
+								<option value="Programador Web, IOS, Android">Programador Web, IOS, Android</option>
+								<option value="Experto en Cloud Computing">Experto en Cloud Computing</option>
+								<option value="Soporte técnico">Soporte técnico</option>
+							</select>					
+
+							<br><br>
 							<button onclick="obtenerNombre()" class="btn btn-info form-control"><i class="fas fa-paper-plane"></i> Enviar</button>
 							<br><br>
 						</div>
@@ -79,20 +91,30 @@
 
 			if(nombre == ''){
 				alert("Debe ingresar un nombre");
+				document.getElementById('nombre').focus();
 			}else if(apellido == ''){
 				alert("Debe ingresar un apellido");
-			}else if(edad == ''){
-				alert("Debe ingresar una edad");
+				document.getElementById('apellido').focus();
+			}else if(edad == '' || edad<18 || edad>120){
+				alert("Debe ingresar una edad valida" + "\n" + "(El campo edad no debe estar vacío, ni ser menor a 18 años, ni mayor a 120 años)");
+				document.getElementById('edad').focus();
 			}else if(email == ''){
 				alert("Debe ingresar un email");
-			}
-			else if(email2 == ''){
+				document.getElementById('email').focus();
+			}else if(email2 == ''){
 				alert("Debe ingresar un email");
+				document.getElementById('email2').focus();
 			}else if(carrera == ''){
 				alert("Debe ingresar una carrera");
-			}
-			else{
-				alert(nombre + " " + apellido + " " + edad + " " + email+"@"+email2 + " " + carrera );
+				document.getElementById('carrera').focus();
+			}else{
+				confirm(	"DATOS DEL FORMULARIO:" + "\n" + "\n" + 
+						"Nombre: " + nombre + "\n" +
+				 	 	"Apellido: " + apellido + "\n" + 
+						"Edad: " + edad + "\n" + 
+						"Email: " + email+"@"+email2 + "\n" + 
+						"Carrera: " + carrera + "\n" + "\n" +
+						"¿Esta seguro de enviar los datos?");
 			}
 
 
