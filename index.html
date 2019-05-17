@@ -3,36 +3,54 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	
+	<!--Agregar librerias Bootstrap-->
 	<link rel="stylesheet" href="css\bootstrap.css">
 	<link rel="stylesheet" href="css\bootstrap-grid.css">
 	<link rel="stylesheet" href="css\bootstrap-reboot.css">
+
+	<!--Agregar Font Awesome-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 </head>
 <body>
 	<div class="container">
 
 		<div class="row">
 			<div class="col-md-4">
-					<br>
-					Formulario de inscripción:
-					<hr>
-					<label>Nombre: </label>
-					<input type="text" class="form-control" id="nombre" required>
-					<br>
-					<label>Apellido: </label>
-					<input type="text" class="form-control" id="apellido" required>
-					<br>
-					<label>Edad: </label>
-					<input type="number" class="form-control" min="1" max="120" id="edad" required>
-					<br>
-					<label>Correo electrónico: </label>
-					<input type="mail" class="form-control" id="email" required>
-					<br>
-					<label>Carrera: </label>
-					<input type="text" class="form-control" required>
-					<br><br>
-					<button onclick="obtenerNombre()" class="btn btn-success form-control">Enviar</button>
+					
+				
+
 			</div>
-			<div class="col-md-4"></div>
+
+			<div class="col-md-4">
+				<br><br>
+				<div class="card-deck mb-3 text-center">
+					<div class="card mb-4 shadow-sm">		
+				
+					<br>
+					<label><i class="fas fa-address-card"></i> Formulario de inscripción:</label>	 
+					<hr>
+					<label><i class="fas fa-male"></i> Nombre: </label>
+					<input type="text" class="form-control" id="nombre" required>
+					
+					<label><i class="fas fa-male"></i> Apellido: </label>
+					<input type="text" class="form-control" id="apellido" required>
+					
+					<label><i class="fas fa-baby-carriage"></i> Edad: </label>
+					<input type="number" class="form-control" min="1" max="120" id="edad" required>
+					
+					<label><i class="fas fa-envelope-open"></i> Correo electrónico: </label>
+					<input type="mail" class="form-control" id="email" required>
+					
+					<label><i class="fas fa-user-tie"></i> Carrera: </label>
+					<input type="text" class="form-control" required>
+					<br>
+					<button onclick="obtenerNombre()" class="btn btn-success form-control"><i class="fas fa-paper-plane"></i> Enviar</button>
+
+					</div>
+				</div>
+
+			</div>
 			<div class="col-md-4"></div>
 		</div>
 
@@ -54,12 +72,12 @@
 
 			pais.forEach(function(elemento){
 				console.log(elemento);
-			});
-			
-			
+			})
 			
 		}
 	</script>
+
 	
+
 </body>
 </html>
