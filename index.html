@@ -26,27 +26,31 @@
 					<div class="card mb-4 shadow-ml text-center">
 						<br>
 						<div class="container">
+
+							<form action="index.php" method="POST">
+
 							<div class="card-header">
 								<img src="img\banner.jpg" class="img-thumbnail">
 								<br><br>
 								<h4 class="my-0 font-weight-normal"><i class="fas fa-address-book"></i>  Formulario de inscripción:</h4>
 							</div>
 							<br>
+							
 							<label><i class="fas fa-address-card"></i> Nombre: </label>
-							<input type="text" class="form-control" id="nombre" autocomplete="off">
+							<input type="text" class="form-control" id="nombre" autocomplete="off" required>
 							<br>
 							<label><i class="far fa-address-card"></i> Apellido: </label>
-							<input type="text" class="form-control" id="apellido" autocomplete="off">
+							<input type="text" class="form-control" id="apellido" autocomplete="off" required>
 							<br>
 							<label><i class="fas fa-baby-carriage"></i> Edad: </label>
-							<input type="number" class="form-control" min="18" max="120" id="edad" autocomplete="off">
+							<input type="number" class="form-control" min="18" max="120" id="edad" autocomplete="off" required>
 							<br>
 							<label><i class="fas fa-envelope-open"></i> Correo electrónico: </label>
 			
 							<div class="input-group-prepend">
-								<input type="text" class="form-control" id="email" autocomplete="off">
+								<input type="text" class="form-control" id="email" autocomplete="off" required>
 								<div class="input-group-text form"><i class="fas fa-at"></i><!--Acá estoy trayendo el @ de Font Awesome--></div>
-								<input type="text" class="form-control" id="email2" autocomplete="off">
+								<input type="text" class="form-control" id="email2" autocomplete="off" required>
 								<div class="input-group-text form">.<!--Acá estoy trayendo el @ de Font Awesome--></div>
 								<select name="email3" id="email3" class="form-control">
 									<option value="cl">cl</option>
@@ -74,6 +78,9 @@
 							<br><br>
 							<button onclick="obtenerNombre()" class="btn btn-info form-control"><i class="fas fa-paper-plane"></i> Enviar</button>
 							<br><br>
+						</form>
+
+
 						</div>
 						
 
