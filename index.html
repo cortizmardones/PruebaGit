@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Formulario de Inscripción</title>
 
-	<link rel=icon href=img\favicon.jpg sizes="16x16" type="image/jpg">
+	<link rel=icon href=img\favicon.jpg sizes="48x48" type="image/jpg">
 	
 	<!--Agregar librerias Bootstrap-->
 	<link rel="stylesheet" href="css\bootstrap.css">
@@ -45,6 +45,13 @@
 								<input type="text" class="form-control" id="email" autocomplete="off">
 								<div class="input-group-text form"><i class="fas fa-at"></i><!--Acá estoy trayendo el @ de Font Awesome--></div>
 								<input type="text" class="form-control" id="email2" autocomplete="off">
+								<div class="input-group-text form">.<!--Acá estoy trayendo el @ de Font Awesome--></div>
+								<select name="email3" id="email3" class="form-control">
+									<option value="cl">cl</option>
+									<option value="com">com</option>
+									<option value="org">org</option>
+									<option value="net">net</option>
+								</select>
 							</div>
 			
 							<br>
@@ -85,6 +92,7 @@
 			var edad 		= document.getElementById('edad').value;
 			var email 		= document.getElementById('email').value;
 			var email2 		= document.getElementById('email2').value;
+			var email3 		= document.getElementById('email3').value;
 			var carrera 	= document.getElementById('carrera').value;
 			console.log(nombre + edad + apellido);
 			
@@ -102,7 +110,7 @@
 				alert("Debe ingresar un email");
 				document.getElementById('email').focus();
 			}else if(email2 == ''){
-				alert("Debe ingresar un email");
+				alert("Debe ingresar un dominio válido");
 				document.getElementById('email2').focus();
 			}else if(carrera == ''){
 				alert("Debe ingresar una carrera");
@@ -112,7 +120,7 @@
 						"Nombre: " + nombre + "\n" +
 				 	 	"Apellido: " + apellido + "\n" + 
 						"Edad: " + edad + "\n" + 
-						"Email: " + email+"@"+email2 + "\n" + 
+						"Email: " + email+"@"+email2 +"."+ email3 + "\n" + 
 						"Carrera: " + carrera + "\n" + "\n" +
 						"¿Esta seguro de enviar los datos?");
 			}
