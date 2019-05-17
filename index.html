@@ -16,39 +16,43 @@
 	<div class="container">
 
 		<div class="row">
-			<div class="col-md-4"></div>
+			<div class="col-md-3"></div>
 
-			<div class="col-md-4">
+			<div class="col-md-6">
 				<br><br>
 				
-					<div class="card mb-4 shadow-sm text-center">		
-				
-						<div class="card-header">
-							<h4 class="my-0 font-weight-normal"><i class="fas fa-address-card"></i> Formulario de inscripción:</h4>
+					<div class="card mb-4 shadow-ml text-center">
+						<br>
+						<div class="container">
+							<div class="card-header">
+								<h4 class="my-0 font-weight-normal"><i class="fas fa-address-card"></i> Formulario de inscripción:</h4>
+							</div>
+							<br>
+							<label><i class="fas fa-male"></i> Nombre: </label>
+							<input type="text" class="form-control" id="nombre" autocomplete="off">
+							<br>
+							<label><i class="fas fa-male"></i> Apellido: </label>
+							<input type="text" class="form-control" id="apellido" autocomplete="off">
+							<br>
+							<label><i class="fas fa-baby-carriage"></i> Edad: </label>
+							<input type="number" class="form-control" min="18" max="120" id="edad" autocomplete="off">
+							<br>
+							<label><i class="fas fa-envelope-open"></i> Correo electrónico: </label>
+							<input type="mail" class="form-control" id="email" autocomplete="on">
+							<br>
+							<label><i class="fas fa-user-tie"></i> Carrera: </label>
+							<input type="text" class="form-control" id="carrera" autocomplete="off">
+							<br>
+							<button onclick="obtenerNombre()" class="btn btn-success form-control"><i class="fas fa-paper-plane"></i> Enviar</button>
+							<br><br>
 						</div>
-						<br>
-						<label><i class="fas fa-male"></i> Nombre: </label>
-						<input type="text" class="form-control" id="nombre" autocomplete="off">
-						<br>
-						<label><i class="fas fa-male"></i> Apellido: </label>
-						<input type="text" class="form-control" id="apellido" autocomplete="off">
-						<br>
-						<label><i class="fas fa-baby-carriage"></i> Edad: </label>
-						<input type="number" class="form-control" min="18" max="120" id="edad" autocomplete="off">
-						<br>
-						<label><i class="fas fa-envelope-open"></i> Correo electrónico: </label>
-						<input type="mail" class="form-control" id="email" autocomplete="off">
-						<br>
-						<label><i class="fas fa-user-tie"></i> Carrera: </label>
-						<input type="text" class="form-control" id="carrera" autocomplete="off">
-						<br>
-						<button onclick="obtenerNombre()" class="btn btn-success form-control"><i class="fas fa-paper-plane"></i> Enviar</button>
+						
 
 					</div>
 				
 
 			</div>
-			<div class="col-md-4"></div>
+			<div class="col-md-3"></div>
 		</div>
 
 			
@@ -62,7 +66,22 @@
 			var email 		= document.getElementById('email').value;
 			var carrera 	= document.getElementById('carrera').value;
 			console.log(nombre + edad + apellido);
-			alert(nombre + " " + apellido + " " + edad + " " + email + " " + carrera );
+			
+
+			if(nombre == ''){
+				alert("Debe ingresar un nombre");
+			}else if(apellido == ''){
+				alert("Debe ingresar un apellido");
+			}else if(edad == ''){
+				alert("Debe ingresar una edad");
+			}else if(email == ''){
+				alert("Debe ingresar un email");
+			}else if(carrera == ''){
+				alert("Debe ingresar una carrera");
+			}
+			else{
+				alert(nombre + " " + apellido + " " + edad + " " + email + " " + carrera );
+			}
 
 
 			/*Recorrer arreglos en JS
