@@ -38,12 +38,18 @@
 							<input type="number" class="form-control" min="18" max="120" id="edad" autocomplete="off">
 							<br>
 							<label><i class="fas fa-envelope-open"></i> Correo electrónico: </label>
-							<input type="mail" class="form-control" id="email" autocomplete="on">
+			
+							<div class="input-group-prepend">
+								<input type="text" class="form-control" id="email">
+								<div class="input-group-text form">@</div>
+								<input type="text" class="form-control" id="email2">
+							</div>
+			
 							<br>
 							<label><i class="fas fa-user-tie"></i> Carrera: </label>
 							<input type="text" class="form-control" id="carrera" autocomplete="off">
 							<br>
-							<button onclick="obtenerNombre()" class="btn btn-success form-control"><i class="fas fa-paper-plane"></i> Enviar</button>
+							<button onclick="obtenerNombre()" class="btn btn-info form-control"><i class="fas fa-paper-plane"></i> Enviar</button>
 							<br><br>
 						</div>
 						
@@ -64,6 +70,7 @@
 			var apellido 	= document.getElementById('apellido').value;
 			var edad 		= document.getElementById('edad').value;
 			var email 		= document.getElementById('email').value;
+			var email2 		= document.getElementById('email2').value;
 			var carrera 	= document.getElementById('carrera').value;
 			console.log(nombre + edad + apellido);
 			
@@ -76,11 +83,14 @@
 				alert("Debe ingresar una edad");
 			}else if(email == ''){
 				alert("Debe ingresar un email");
+			}
+			else if(email2 == ''){
+				alert("Debe ingresar un email");
 			}else if(carrera == ''){
 				alert("Debe ingresar una carrera");
 			}
 			else{
-				alert(nombre + " " + apellido + " " + edad + " " + email + " " + carrera );
+				alert(nombre + " " + apellido + " " + edad + " " + email+"@"+email2 + " " + carrera );
 			}
 
 
